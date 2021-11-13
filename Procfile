@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath PLUS-BRIS-VANILLA-LOGIC-BEANS-DRF sprinkles.wsgi --log-file -
