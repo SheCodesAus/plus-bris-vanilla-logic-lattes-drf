@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath sprinkles sprinkles.wsgi --log-file -
