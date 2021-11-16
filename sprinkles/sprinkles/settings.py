@@ -32,7 +32,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
-    'projects.apps.ProjectsConfig',
+    'canvas.apps.CanvasConfig',
     'rest_framework',
     "rest_framework.authtoken",
     'django.contrib.admin',
