@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Canvas, StickyNote
 from .serializers import CanvasSerializer, StickyNoteSerializer
+# from.serializers import CanvasDetailSerializer, StickyNoteDetailSerializer
 from .permissions import IsOwnerOrReadOnly
 
 class CanvasList(APIView):
@@ -81,7 +82,7 @@ class StickyNoteList(APIView):
     def post(self, request):
         serializer = StickyNoteSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(supporter=request.user)
+            serializer.save(owner=request.user)
             return Response(
                 serializer.data,
                 status=status.HTTP_201_CREATED

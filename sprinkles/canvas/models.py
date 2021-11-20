@@ -8,7 +8,7 @@ class Canvas(models.Model):
     description = models.TextField()
     is_public = models.BooleanField()
     date_created = models.DateField(default=date.today)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
 
 class StickyNote(models.Model):
     title = models.CharField(max_length=200)
@@ -21,7 +21,7 @@ class StickyNote(models.Model):
     what = models.TextField()
     why = models.TextField()
     anonymous = models.BooleanField()
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,default=1)
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,default=1)
 
 
 
