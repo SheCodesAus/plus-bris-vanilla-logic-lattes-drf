@@ -75,8 +75,11 @@ class StickyNoteList(APIView):
         ]
 
     def get(self, request):
-        sticky_notes = StickyNote.objects.all()
-        serializer = StickyNoteSerializer(sticky_notes, many=True)
+        canvas_id = request.query_params.get("canvas_id")
+        stickyNotes = (
+            StickyNote.objects.filter(canvas=canvas_id) if canvas_id else StickyNote.objects.all()
+        )
+        serializer = StickyNoteSerializer(stickyNotes, many=True)
         return Response(serializer.data)
     
     def post(self, request):

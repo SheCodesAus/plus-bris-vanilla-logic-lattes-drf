@@ -11,16 +11,16 @@ class Canvas(models.Model):
     owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
 
 class StickyNote(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True)
     canvas = models.ForeignKey(
         'Canvas',
         on_delete=models.CASCADE,
         related_name='sticky_notes'
         )
-    who = models.TextField()
-    what = models.TextField()
-    why = models.TextField()
-    anonymous = models.BooleanField()
+    who = models.TextField(null=True)
+    what = models.TextField(null=True)
+    why = models.TextField(null=True)
+    anonymous = models.BooleanField(default=False)
     owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,default=1)
 
 

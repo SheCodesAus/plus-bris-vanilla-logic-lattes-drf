@@ -20,6 +20,7 @@ class StickyNoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = StickyNote
         fields = [
+            'id',
             'title',
             'canvas',
             'who',
