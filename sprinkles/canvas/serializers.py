@@ -13,7 +13,8 @@ class CanvasSerializer(serializers.ModelSerializer):
             'description',
             'is_public',
             'date_created',
-            'owner'
+            'owner',
+            'image'
             ]
 
 class StickyNoteSerializer(serializers.ModelSerializer):

@@ -9,6 +9,7 @@ class Canvas(models.Model):
     is_public = models.BooleanField()
     date_created = models.DateField(default=date.today)
     owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
+    image = models.URLField()
 
 class StickyNote(models.Model):
     title = models.CharField(max_length=200, null=True)
