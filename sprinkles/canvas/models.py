@@ -6,7 +6,7 @@ class Canvas(models.Model):
     team = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     description = models.TextField()
-    is_public = models.BooleanField()
+    is_public = models.BooleanField(null=True)
     date_created = models.DateField(default=date.today)
     owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
     image = models.URLField()
