@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Canvas, StickyNote
 
-# Register your models here.
+admin.site.register(Canvas)
+admin.site.register(StickyNote)
